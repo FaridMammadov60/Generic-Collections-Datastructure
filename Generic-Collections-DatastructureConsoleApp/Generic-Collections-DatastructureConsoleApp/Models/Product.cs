@@ -38,6 +38,18 @@ namespace Generic_Collections_DatastructureConsoleApp.Models
             }
             set
             {
+                if (value<=0)
+                {
+
+                P1: Console.Write("Qiymət 0-dan kiçik ola bilməz\n" +
+                 "Yeniden cehd edin");
+                    value =Convert.ToDouble(Console.ReadLine());
+                    if(value<=0)
+                    {
+                        goto P1;
+                    }
+                    _price = value;
+                }
                 _price = value;
             }
         }

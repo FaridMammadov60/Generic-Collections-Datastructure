@@ -10,7 +10,7 @@ namespace Generic_Collections_DatastructureConsoleApp.Models.Excepstion
     {
         public static void Capacity()
         {
-            Console.WriteLine("Kitab limiti aşmısız");
+            Console.WriteLine("Kitab limitini aşmısız");
         }
     }
 }

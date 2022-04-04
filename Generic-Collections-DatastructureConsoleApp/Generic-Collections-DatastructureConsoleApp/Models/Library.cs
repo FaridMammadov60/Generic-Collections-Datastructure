@@ -47,7 +47,7 @@ namespace Generic_Collections_DatastructureConsoleApp.Models
         #region Methods
         public void AddBook(Book book)
         {
-            if (book.Id > BookLimit)
+            if (book.Count > BookLimit)
             {
                 CapacityLimitException.Capacity();
                 return;
@@ -59,11 +59,10 @@ namespace Generic_Collections_DatastructureConsoleApp.Models
 
             if (id == null)
             {
-                Exception ex = null;
+                NullReferenceException ex = null;
                 Console.WriteLine(ex.Message);
-            }
-            else
-            {
+            }         
+            
                 foreach (var item in Books)
                 {
                     if (id == item.Id)
@@ -74,8 +73,8 @@ namespace Generic_Collections_DatastructureConsoleApp.Models
                 }
                 Console.WriteLine("Daxil edilen ID-li element yoxdur");
                 return null;
-            }
-            return null;
+            
+           
         }
 
         public void RemoveById(int? id)
