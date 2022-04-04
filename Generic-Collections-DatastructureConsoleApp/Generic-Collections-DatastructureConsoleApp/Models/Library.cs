@@ -61,20 +61,18 @@ namespace Generic_Collections_DatastructureConsoleApp.Models
             {
                 NullReferenceException ex = null;
                 Console.WriteLine(ex.Message);
-            }         
-            
-                foreach (var item in Books)
+            }
+            foreach (var item in Books)
+            {
+                if (id == item.Id)
                 {
-                    if (id == item.Id)
-                    {
-                        Console.WriteLine(item.Id);
-                        return item;
-                    }
+                    Console.WriteLine(item.Id);
+                    return item;
                 }
-                Console.WriteLine("Daxil edilen ID-li element yoxdur");
-                return null;
-            
-           
+            }
+            Console.WriteLine("Daxil edilen ID-li element yoxdur");
+            return null;
+
         }
 
         public void RemoveById(int? id)
@@ -96,7 +94,7 @@ namespace Generic_Collections_DatastructureConsoleApp.Models
                 }
                 NotFoundException.NotFound();
             }
-            
+
         }
         #endregion
     }

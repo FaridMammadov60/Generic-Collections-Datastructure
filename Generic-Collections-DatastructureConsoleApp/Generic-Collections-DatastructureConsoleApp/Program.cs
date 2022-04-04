@@ -11,6 +11,7 @@ namespace Generic_Collections_DatastructureConsoleApp
         {
             Console.OutputEncoding=Encoding.Unicode;
             Console.InputEncoding=Encoding.Unicode;
+            #region Create Book 
             //Birinci book
             Book book = new Book("çingiz Abdullayev", 200, "Qərb Bürküsü", 5.90)
             {
@@ -26,19 +27,9 @@ namespace Generic_Collections_DatastructureConsoleApp
             Book book1 = new Book("Dan Brown", 300, "Mələklər ve Şeytanlar", 6.90)
             {
                 Count = 2
-            };            
-            //book1.ShowInfo();
-           // book.ShowInfo();
-            
-            //List book
-            List<Book> books = new List<Book>();
-            books.Add(book);
-            books.Add(book1);           
-           
-            Library library = new Library(3)
-            {
-                Books = books,  
             };
+            //book1.ShowInfo();
+            // book.ShowInfo();
             Book book2 = new Book("Ilber Ortayli", 250, "Osmanli Tarixi", 10.90)
             {
                 Count = 3
@@ -47,10 +38,26 @@ namespace Generic_Collections_DatastructureConsoleApp
             {
                 Count = 3
             };
-            //Console.WriteLine(library.Books.Count);
+            //book3.ShowInfo();            
+            #endregion
 
+            #region Create List<Book>
+            //List book
+            List<Book> books = new List<Book>();
+            books.Add(book);
+            books.Add(book1);
+
+            Library library = new Library(3)
+            {
+                Books = books,
+            };
+
+            //Console.WriteLine(library.Books.Count);
+            #endregion
+
+            #region List<Book> Method
             library.AddBook(book2);
-            library.AddBook(book3);          
+            library.AddBook(book3);
 
             //Console.WriteLine(library.Books.Count);
 
@@ -65,7 +72,11 @@ namespace Generic_Collections_DatastructureConsoleApp
                 Console.WriteLine("-------");
             }
             library.AddBook(book3);
-           
+            #endregion
+
+
+
+
         }
     }
 }
